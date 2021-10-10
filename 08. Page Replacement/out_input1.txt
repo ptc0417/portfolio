@@ -1,0 +1,88 @@
+--------------FIFO-----------------------
+1	1	F
+2	21	F
+3	321	F
+4	432	F
+1	143	F
+2	214	F
+5	521	F
+1	521
+2	521
+3	352	F
+4	435	F
+5	435
+Page Fault = 9  Page Replaces = 6  Page Frames = 3
+
+--------------LRU-----------------------
+1	1	F
+2	21	F
+3	321	F
+4	432	F
+1	143	F
+2	214	F
+5	521	F
+1	152
+2	215
+3	321	F
+4	432	F
+5	543	F
+Page Fault = 10  Page Replaces = 7  Page Frames = 3
+
+--------------Least Frequently Used Page Replacement-----------------------
+1	1	F
+2	21	F
+3	321	F
+4	432	F
+1	143	F
+2	214	F
+5	521	F
+1	521
+2	521
+3	321	F
+4	421	F
+5	521	F
+Page Fault = 10  Page Replaces = 7  Page Frames = 3
+
+--------------Most Frequently Used Page Replacement -----------------------
+1	1	F
+2	21	F
+3	321	F
+4	432	F
+1	143	F
+2	214	F
+5	521	F
+1	521
+2	521
+3	352	F
+4	435	F
+5	435
+Page Fault = 9  Page Replaces = 6  Page Frames = 3
+--------------Least Frequently Used LRU Page Replacement-----------------------
+1	1	F
+2	21	F
+3	321	F
+4	432	F
+1	143	F
+2	214	F
+5	521	F
+1	152
+2	215
+3	321	F
+4	421	F
+5	521	F
+Page Fault = 10  Page Replaces = 7  Page Frames = 3
+
+--------------Most Frequently Used LRU Page Replacement -----------------------
+1	1	F
+2	21	F
+3	321	F
+4	432	F
+1	143	F
+2	214	F
+5	521	F
+1	152
+2	215
+3	325	F
+4	435	F
+5	543
+Page Fault = 9  Page Replaces = 6  Page Frames = 3
