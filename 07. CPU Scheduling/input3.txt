@@ -1,0 +1,8 @@
+6       10
+ID     CPU Burst  Arrival Time   Priority
+  1        20         0           1
+  2         25         25           3
+  3         25         30          3
+  4         15         60         2
+  5         10         100          5
+  6         10         105          4
