@@ -1,7 +1,3 @@
-/*
-  10727219 ³\§Ó¥ò
-  10727248 ¾G¯\·O
-*/
 #include <vector>
 #include <string>
 #include <stack>    // push, pop, top 
@@ -30,24 +26,24 @@ typedef struct infoType {
 	string info ;
 } infoType ;
 
-typedef struct slotType { // ¤@­Ó³æ¦ì(¤@­Ó¾Ç®Õ¦W¹ïÀ³¨ìªº©Ò¦³¸ê®Æ) 
-	vector <int> rSet ;   // ¾Ç®Õ¦WºÙ¹ïÀ³¨ìªº©Ò¦³¸ê®Æ
-	string key ;          // ¾Ç®Õ¦WºÙ 
+typedef struct slotType { // ä¸€å€‹å–®ä½(ä¸€å€‹å­¸æ ¡åå°æ‡‰åˆ°çš„æ‰€æœ‰è³‡æ–™) 
+	vector <int> rSet ;   // å­¸æ ¡åç¨±å°æ‡‰åˆ°çš„æ‰€æœ‰è³‡æ–™
+	string key ;          // å­¸æ ¡åç¨± 
 } slotType ;
 
-typedef struct nodeType {             // 2-3 tree ªº¸`ÂI 
-	slotType data[KEY_NUM] ;          // ¨â­Ó¾Ç®Õ¦WºÙ (0->¤p) 
-	struct nodeType * link[PTR_NUM] ; // a list of pointers (¥ª,¥k,¤¤) 
-	struct nodeType * parent ;        // a pointer to the parent node(¥Î©ó¤Àµõsplit) 
+typedef struct nodeType {             // 2-3 tree çš„ç¯€é» 
+	slotType data[KEY_NUM] ;          // å…©å€‹å­¸æ ¡åç¨± (0->å°) 
+	struct nodeType * link[PTR_NUM] ; // a list of pointers (å·¦,å³,ä¸­) 
+	struct nodeType * parent ;        // a pointer to the parent node(ç”¨æ–¼åˆ†è£‚split) 
 } nodeType ;
 
-typedef struct pointType { // a point on the search path(¾ğ®Ú¤@¸ô©¹¤U¸g¹Lªº¸`ÂI­Ì) 
+typedef struct pointType { // a point on the search path(æ¨¹æ ¹ä¸€è·¯å¾€ä¸‹ç¶“éçš„ç¯€é»å€‘) 
 	nodeType * pnode ;     // pointer to a parent node
-	int pidx ;             // entrance index on the parent node(¬ö¿ı©¹¤U¨«¬O¨«¥ª,¥k,¤¤) 
+	int pidx ;             // entrance index on the parent node(ç´€éŒ„å¾€ä¸‹èµ°æ˜¯èµ°å·¦,å³,ä¸­) 
 } pointType ;
 
-typedef struct blockType { // a data block received from a split (¥Î©ó¤Àµõ-¨C¦¸¤Àµõ³£¶·§â¸ê°T©¹¤W±a) 
-	slotType slot ;        // a pair of (record id, key) // ¾Ç®Õ¦WºÙ-©¹¤W¥s¨ì¤÷¸`ÂIªº®É­Ô 
+typedef struct blockType { // a data block received from a split (ç”¨æ–¼åˆ†è£‚-æ¯æ¬¡åˆ†è£‚éƒ½é ˆæŠŠè³‡è¨Šå¾€ä¸Šå¸¶) 
+	slotType slot ;        // a pair of (record id, key) // å­¸æ ¡åç¨±-å¾€ä¸Šå«åˆ°çˆ¶ç¯€é»çš„æ™‚å€™ 
 	nodeType * link ;      // a pointer to a child on the right
 } blockType ;
 
@@ -181,7 +177,7 @@ class Twothreetree {
 
 		}
 		else {  // the root exists, ...
-			stack <pointType> aPath ; // stack to keep the search path(¬ö¿ı¨«¹L¸`ÂI) 
+			stack <pointType> aPath ; // stack to keep the search path(ç´€éŒ„èµ°éç¯€é») 
 			pointType curP ;          // last-visited node at the top of stack
 			blockType blockUp ;       // a data block received from a split
 			
@@ -199,13 +195,13 @@ class Twothreetree {
 				}
 				else { // split a full leaf
 					splitLeaf( newSlot, curP, blockUp ) ; // split a leaf for an insertion
-					if ( curP.pnode->parent == NULL )     // if a root is split, create a new root(©¹¤W³Ğ¤@¸`ÂI) 
+					if ( curP.pnode->parent == NULL )     // if a root is split, create a new root(å¾€ä¸Šå‰µä¸€ç¯€é») 
 						root = createRoot( curP.pnode, blockUp.link, blockUp.slot ) ;
 					else {                                // continue splittig a non-leaf for an insertion
 						do {
 							aPath.pop() ; 											// last ( forget the current node)
 							curP = aPath.top() ;									// last's parent ( the next parent for an insertion)
-							if ( curP.pnode->data[KEY_NUM-1].rSet.size() == 0 ) {	// ¦³ªÅ¦ì ( at least one (rightmost) unused slot
+							if ( curP.pnode->data[KEY_NUM-1].rSet.size() == 0 ) {	// æœ‰ç©ºä½ ( at least one (rightmost) unused slot
 								insertNonleaf( blockUp, curP ) ; // add a slot into a non-leaf
 								break ;                          // finish the insertion!
 							}
@@ -274,7 +270,7 @@ class Twothreetree {
 		}
 	}
 	
-	void insertLeaf( slotType newS, pointType & aLeaf ) { // ±N¾Ç®Õ¦WºÙ©ñ¦Ü¥¿½T¦ì¸m 
+	void insertLeaf( slotType newS, pointType & aLeaf ) { // å°‡å­¸æ ¡åç¨±æ”¾è‡³æ­£ç¢ºä½ç½® 
 		//cout << "insertleaf" << endl ;
 		// add a record into a leaf
 		// input: a new slot (rSet, key), the leaf to insert(pnode, pidx)
@@ -293,12 +289,12 @@ class Twothreetree {
 		
 	}
 	
-	void splitLeaf( slotType newS, pointType & aLeaf, blockType & aBlock ) { // ¾ğ¸­¸`ÂI¤wº¡°µ¤Àµõ 
+	void splitLeaf( slotType newS, pointType & aLeaf, blockType & aBlock ) { // æ¨¹è‘‰ç¯€é»å·²æ»¿åšåˆ†è£‚ 
 		//cout << "splitLeaf" << endl ;
 		// split a non-leaf for an insertion
 		// input: a new slot(rSet, key), the leaf to insert(pnode, pidx)
 		// output: block after split to move upwards
-		slotType buf[PTR_NUM] ; // a buffer to keep a full node plus a new record( ¤p, ¤¤, ¤j) 
+		slotType buf[PTR_NUM] ; // a buffer to keep a full node plus a new record( å°, ä¸­, å¤§) 
 		int idx = 0 ; // index of the full node
 
 		for ( int i = 0 ; i < PTR_NUM ; i++ ) { // 0.1.2 ( fill in the entire buffer)
@@ -313,13 +309,13 @@ class Twothreetree {
 			}	
 		}
 		
-		aLeaf.pnode->data[0].rSet = buf[0].rSet ; // leave only the leftmost record(³Ì¤p¯dµÛ) 
+		aLeaf.pnode->data[0].rSet = buf[0].rSet ; // leave only the leftmost record(æœ€å°ç•™è‘—) 
 		aLeaf.pnode->data[0].key = buf[0].key ;
 		
 		for ( int i = 1 ; i < KEY_NUM ; i++ ) { // the remains: unused slots
 			aLeaf.pnode->data[i].rSet.clear() ;
 		}
-		aBlock.link = createNode( NULL, NULL, aLeaf.pnode->parent, buf[2] ) ; // create a sibling node on the right(³Ì¤j) 
+		aBlock.link = createNode( NULL, NULL, aLeaf.pnode->parent, buf[2] ) ; // create a sibling node on the right(æœ€å¤§) 
 		
 		aBlock.slot.rSet = buf[1].rSet ; // block to move upwards
 		aBlock.slot.key = buf[1].key ;
@@ -342,7 +338,7 @@ class Twothreetree {
 		// input: a new block(slot, link), the non-leaf to insert (pnode, pidx)
 		// output: non-leaf after update
 		//cout << "insertNonleaf" << endl ;
-		for ( int i = KEY_NUM - 1 ;i >= goal.pidx ; i-- ) { // ©ñ¸m¥¿½T¦ì¸m 
+		for ( int i = KEY_NUM - 1 ;i >= goal.pidx ; i-- ) { // æ”¾ç½®æ­£ç¢ºä½ç½® 
 			if ( i > goal.pidx ) {
 				goal.pnode->data[i].rSet = goal.pnode->data[i-1].rSet ;		// sort by the result of searchpath
 				goal.pnode->data[i].key = goal.pnode->data[i-1].key ;
@@ -354,12 +350,12 @@ class Twothreetree {
 			else 
 				break ;
 		}
-		if( goal.pidx == 0 ) { //¥ª¤É 
-			goal.pnode->link[2] = goal.pnode->link[1] ; // ­ì¥kµ¹¤¤ 
-			goal.pnode->link[1] = oneB.link ; // ³Ì¤jµ¹¥k 
+		if( goal.pidx == 0 ) { //å·¦å‡ 
+			goal.pnode->link[2] = goal.pnode->link[1] ; // åŸå³çµ¦ä¸­ 
+			goal.pnode->link[1] = oneB.link ; // æœ€å¤§çµ¦å³ 
 		}
-		else if( goal.pidx == 1 ) { //¥k¤É 
-			goal.pnode->link[2] = oneB.link ; // ³Ì¤jµ¹¤¤ 
+		else if( goal.pidx == 1 ) { //å³å‡ 
+			goal.pnode->link[2] = oneB.link ; // æœ€å¤§çµ¦ä¸­ 
 		}
 	}
 	
@@ -518,9 +514,9 @@ class AVLtree{
       } // AVLtree::insertAVLtree()
 
       int getHeight( AVLinfoTypePtr root ){
-          if ( root == NULL )// ªÅªº
+          if ( root == NULL )// ç©ºçš„
               return 0 ;
-           else { // ©|¥¼§ä§¹
+           else { // å°šæœªæ‰¾å®Œ
               int numR = getHeight( root->right ) ;
               int numL = getHeight( root->left ) ;
               if ( numR > numL )
@@ -631,7 +627,7 @@ void creat23tree( Twothreetree tree, Reader reader ) {
 	else {
 		for( int i = 0 ; i < KEY_NUM ; i++ ) {
 			int a = i ;
-			if( tree.getrootid(0,0) > tree.getrootid(1,0) ) // id¥Ñ¤p¨ì¤j¦L(§PÂ_¦L0©Î1) 
+			if( tree.getrootid(0,0) > tree.getrootid(1,0) ) // idç”±å°åˆ°å¤§å°(åˆ¤æ–·å°0æˆ–1) 
 				a = 1 - i ;
 			for( int j = 0 ; j < tree.getrootsize( a ) ; j++ ) {
 				int idx = tree.getrootid(a,j) ;
