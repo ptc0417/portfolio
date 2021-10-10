@@ -1,0 +1,176 @@
+{C:/Users/user/Desktop/Computer Organization/Final/project/add32.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Computer Organization/Final/project/add32.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module add32
+
+Top level modules:
+	add32
+
+} {} {}} {C:/Users/user/Desktop/Computer Organization/Final/project/FA.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Computer Organization/Final/project/FA.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module FA
+
+Top level modules:
+	FA
+
+} {} {}} {C:/Users/user/Desktop/Computer Organization/Final/project/tb_Pipelined.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Computer Organization/Final/project/tb_Pipelined.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module tb_Pipelined
+
+Top level modules:
+	tb_Pipelined
+
+} {} {}} {C:/Users/user/Desktop/Computer Organization/Final/project/branch_equ.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Computer Organization/Final/project/branch_equ.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module branch_equ
+
+Top level modules:
+	branch_equ
+
+} {} {}} {C:/Users/user/Desktop/Computer Organization/Final/project/sign extend.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Computer Organization/Final/project/sign extend.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module sign_extend
+
+Top level modules:
+	sign_extend
+
+} {} {}} {C:/Users/user/Desktop/Computer Organization/Final/project/memory.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Computer Organization/Final/project/memory.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module memory
+
+Top level modules:
+	memory
+
+} {} {}} {C:/Users/user/Desktop/Computer Organization/Final/project/alu_one.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Computer Organization/Final/project/alu_one.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module alu_one
+
+Top level modules:
+	alu_one
+
+} {} {}} {C:/Users/user/Desktop/Computer Organization/Final/project/unsign_extend.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Computer Organization/Final/project/unsign_extend.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module unsign_extend
+
+Top level modules:
+	unsign_extend
+
+} {} {}} {C:/Users/user/Desktop/Computer Organization/Final/project/alu_ctl.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Computer Organization/Final/project/alu_ctl.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module alu_ctl
+
+Top level modules:
+	alu_ctl
+
+} {} {}} {C:/Users/user/Desktop/Computer Organization/Final/project/HiLo.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Computer Organization/Final/project/HiLo.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module HiLo
+
+Top level modules:
+	HiLo
+
+} {} {}} {C:/Users/user/Desktop/Computer Organization/Final/project/alu_31.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Computer Organization/Final/project/alu_31.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module alu_31
+
+Top level modules:
+	alu_31
+
+} {} {}} {C:/Users/user/Desktop/Computer Organization/Final/project/Shifter.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Computer Organization/Final/project/Shifter.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module Shifter
+
+Top level modules:
+	Shifter
+
+} {} {}} {C:/Users/user/Desktop/Computer Organization/Final/project/Divider.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Computer Organization/Final/project/Divider.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module divider
+
+Top level modules:
+	divider
+
+} {} {}} {C:/Users/user/Desktop/Computer Organization/Final/project/MEM_WB.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Computer Organization/Final/project/MEM_WB.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module MEM_WB
+
+Top level modules:
+	MEM_WB
+
+} {} {}} {C:/Users/user/Desktop/Computer Organization/Final/project/MUX_2to1.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Computer Organization/Final/project/MUX_2to1.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module MUX_2to1
+
+Top level modules:
+	MUX_2to1
+
+} {} {}} {C:/Users/user/Desktop/Computer Organization/Final/project/ID_EX.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Computer Organization/Final/project/ID_EX.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module ID_EX
+
+Top level modules:
+	ID_EX
+
+} {} {}} {C:/Users/user/Desktop/Computer Organization/Final/project/control_pipelined.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Computer Organization/Final/project/control_pipelined.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module control_pipelined
+
+Top level modules:
+	control_pipelined
+
+} {} {}} {C:/Users/user/Desktop/Computer Organization/Final/project/alu.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Computer Organization/Final/project/alu.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module alu
+
+Top level modules:
+	alu
+
+} {} {}} {C:/Users/user/Desktop/Computer Organization/Final/project/mips_pipelined.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Computer Organization/Final/project/mips_pipelined.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module mips_pipelined
+
+Top level modules:
+	mips_pipelined
+
+} {} {}} {C:/Users/user/Desktop/Computer Organization/Final/project/IF_ID.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Computer Organization/Final/project/IF_ID.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module IF_ID
+
+Top level modules:
+	IF_ID
+
+} {} {}} {C:/Users/user/Desktop/Computer Organization/Final/project/EX_MEM.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Computer Organization/Final/project/EX_MEM.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module EX_MEM
+
+Top level modules:
+	EX_MEM
+
+} {} {}} {C:/Users/user/Desktop/Computer Organization/Final/project/reg32.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Computer Organization/Final/project/reg32.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module reg32
+
+Top level modules:
+	reg32
+
+} {} {}} {C:/Users/user/Desktop/Computer Organization/Final/project/mux2.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Computer Organization/Final/project/mux2.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module mux2
+
+Top level modules:
+	mux2
+
+} {} {}} {C:/Users/user/Desktop/Computer Organization/Final/project/mux3.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Computer Organization/Final/project/mux3.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module mux3
+
+Top level modules:
+	mux3
+
+} {} {}} {C:/Users/user/Desktop/Computer Organization/Final/project/reg_file.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Computer Organization/Final/project/reg_file.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module reg_file
+
+Top level modules:
+	reg_file
+
+} {} {}}
