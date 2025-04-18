@@ -74,19 +74,19 @@ public :
         fclose(fout) ;
     } // write file
 
-    void bubbleSort() { // ?勗??之??
+    void bubbleSort() { 
         bool sorted = true ;
         int datasize = getvStrSize() ;
-        for ( int i = 0 ; sorted && i < datasize - 1 ; i++ ){ // ??頞嚗orted?亦false?”隞交?摨???銝???摨?
+        for ( int i = 0 ; sorted && i < datasize - 1 ; i++ ){ 
             sorted = false ;
-            for ( int j = 0 ; j < datasize - 1 - i ; j++ ){ // 瘥?瘥??活??
+            for ( int j = 0 ; j < datasize - 1 - i ; j++ ){ 
                 if ( vStr[j] > vStr[j+1] ){
                     swap( vStr[j], vStr[j+1] ) ;
-                    sorted = true ; // ?詨廣wap????摨?敹?
+                    sorted = true ; 
                 } // if
             } // for
         } // for
-    } // BubbleSort() 瘞?部??
+    } // BubbleSort() 
 
     void mergesort( int first, int last ) {
         if ( first < last ) {
@@ -97,7 +97,7 @@ public :
         } // if
     } // mergesort()
 
-    void mergeSort_merge( int first, int mid, int last ){ // ?蔥?典?
+    void mergeSort_merge( int first, int mid, int last ){ 
         int first1 = first, last1 = mid ;
         int first2 = mid+1, last2 = last ;
         int index = first ;
@@ -145,13 +145,13 @@ public :
 
 void thread_bubbleSort( int start, int ending ) {
     bool sorted = true ;
-    for ( int i = start ; sorted && i <= ending ; i++ ){ // ??頞嚗orted?亦false?”隞交?摨???銝???摨?
-        int count_run_time = 0 ; // bubble頝?甈⊥
+    for ( int i = start ; sorted && i <= ending ; i++ ){ 
+        int count_run_time = 0 ;
         sorted = false ;
-        for ( int j = start ; j < ending - count_run_time ; j++ ){ // 瘥?瘥??活??
+        for ( int j = start ; j < ending - count_run_time ; j++ ){ 
             if ( gvStr[j] > gvStr[j+1] ){
                 swap( gvStr[j], gvStr[j+1] ) ;
-                sorted = true ; // ?詨廣wap????摨?敹?
+                sorted = true ; 
             } // if
         } // for
         count_run_time++ ;
@@ -162,13 +162,13 @@ void process_bubbleSort( int start, int ending, void*a ) {
     bool sorted = true ;
     int temp[gvStr.size()] ;
     memcpy( temp, a, gvStr.size()*4 ) ;
-    for ( int i = start ; sorted && i <= ending ; i++ ){ // ??頞嚗orted?亦false?”隞交?摨???銝???摨?
-        int count_run_time = 0 ; // bubble頝?甈⊥
+    for ( int i = start ; sorted && i <= ending ; i++ ){ 
+        int count_run_time = 0 ; 
         sorted = false ;
-        for ( int j = start ; j < ending - count_run_time ; j++ ){ // 瘥?瘥??活??
+        for ( int j = start ; j < ending - count_run_time ; j++ ){ 
             if ( temp[j] > temp[j+1] ){
                 swap( temp[j], temp[j+1] ) ;
-                sorted = true ; // ?詨廣wap????摨?敹?
+                sorted = true ; 
             } // if
         } // for
         count_run_time++ ;
@@ -176,7 +176,7 @@ void process_bubbleSort( int start, int ending, void*a ) {
     memcpy( a, temp, gvStr.size()*4 ) ;
 } // thread_bubbleSort
 
-void thread_mergeSort_merge( int first, int mid, int last ){ // ?蔥?典?
+void thread_mergeSort_merge( int first, int mid, int last ){ 
     int first1 = first, last1 = mid ;
     int first2 = mid+1, last2 = last ;
     int index = first ;
@@ -211,12 +211,12 @@ void thread_mergeSort_merge( int first, int mid, int last ){ // ?蔥?典?
 
 } // mergeSort_merge()
 
-void thread_mergesort( int first, int last, int k, int portion_size ) { // ?
+void thread_mergesort( int first, int last, int k, int portion_size ) { 
     thread threads[2] ;
-    if ( k > 1 ) { // ?斗?臬閬匱蝥?
+    if ( k > 1 ) { 
         int mid = first + (k/2)*portion_size-1  ;
         threads[0] = thread(thread_mergesort, first, mid, k/2, portion_size) ;
-        if ( k%2 != 0 ){ // 憟隞賢??銝撅???隞賢?斗)
+        if ( k%2 != 0 ){ 
             k = k/2 + 1 ;
         } // if
         else {
@@ -228,24 +228,24 @@ void thread_mergesort( int first, int last, int k, int portion_size ) { // ?�
         thread_mergeSort_merge( first, mid, last ) ;
     } // if
     else {
-        thread_bubbleSort( first, last ) ; // ??拐?隞踝???bubble???隞?
+        thread_bubbleSort( first, last ) ; 
     } // else
 
 } // mergesort()
 
-void task4_mergesort( int first, int last, int k, int portion_size ) { // ?
-    if ( k > 1 ) { // ?斗?臬閬匱蝥?
+void task4_mergesort( int first, int last, int k, int portion_size ) {
+    if ( k > 1 ) { 
         int temp = k/2 ;
         int mid = first + ( portion_size*temp-1 ) ;
         task4_mergesort( first, mid, temp, portion_size ) ;
-        if ( k%2 == 1 ){ // 憟隞賢??銝撅?
+        if ( k%2 == 1 ){ 
             temp++ ;
         } // if
         task4_mergesort( mid+1, last, temp, portion_size ) ;
         thread_mergeSort_merge( first, mid, last ) ;
     } // if
     else {
-        thread_bubbleSort( first, last ) ; // ??拐?隞踝???bubble???隞?
+        thread_bubbleSort( first, last ) ;
     } // else
 
 } // mergesort()
@@ -264,7 +264,7 @@ void* create_shared_memory(size_t size) {
     return mmap(NULL, size, protection, visibility, -1, 0);
 }
 
-void process_mergeSort_merge( int first, int mid, int last, void* a ){ // ?蔥?典?
+void process_mergeSort_merge( int first, int mid, int last, void* a ){ 
     int first1 = first, last1 = mid ;
     int first2 = mid+1, last2 = last ;
     int index = first ;
@@ -324,7 +324,7 @@ void task3_mergesort( int first, int last, int k, int portion_size, void* a ) {
         } // else
     } // if
     else {
-        process_bubbleSort( first, last, a ) ; // ??拐?隞踝???bubble???隞?
+        process_bubbleSort( first, last, a ) ; 
     } // else
 }
 
@@ -366,8 +366,8 @@ int main()
 {
     string cmd ;
     string filename ;
-    int portion ; // 隞賣k
-    int portion_size = -1 ; // 瘥遢???鞈???
+    int portion ; 
+    int portion_size = -1 ; 
     int k = 1 ;
     sorting cSort ;
     clock_t start, ending;
